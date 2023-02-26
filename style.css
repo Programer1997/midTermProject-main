@@ -1,0 +1,412 @@
+html,body{
+    margin: 0%;
+    font-family: Arial, Helvetica, sans-serif;
+    
+    
+}
+*{
+    margin: 0%;
+    padding: 0%;
+    
+    
+}
+/*First Big challenge*/
+.container{
+
+    
+    width: 100%; /*this data is really important for keep the website RESPONSIVE, big challenge because i was trying give to my container 412px width based in samsumg galaxy S20 */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    
+    
+
+}
+/*part of header*/
+
+header ul {
+    background-color: #333;
+    width: 100%;
+   /* height: 2.5em;*/
+    padding-top: 1%;        /*both paddin gelp to dissaper some extra space overflowing after of the container */ /*third challenge*/
+    padding-bottom: 1%;
+    font-size: 1.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    z-index: 3;
+    
+}
+
+header ul li {
+    list-style: none;
+}
+header ul li:hover{
+    background-color: #827b7b;
+    width: 10%;
+    
+}
+
+/*part of header*/
+.menu a{
+    text-decoration: none;
+    color: #fff;
+    text-transform: capitalize;
+
+}
+.menu a:hover{
+    color: aqua;
+}
+/*part of header*/
+
+
+
+
+.image{
+    /*position: relative; this going to help me for put every element with some text over the image father element*/
+    width: 100%;
+    height: auto; 
+}
+
+/*////////////////////////////////// CHALLENGE //////////////////////////*/
+.textOver{  /*SOLUTION bigger challenge, i make a new container and i put every element that should be stay over to the image inside there, that way keep the element in the center of the image in most screen possible and after i can fix th rest with some adjusts with "@mediaQueries" */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-190%);
+    padding: 1em;
+   width: 70%;
+}
+
+
+.welcome{
+   /* position: relative; 
+    top: 0em;*/ /*these two elements could be used for me, however "transform:traslate", do the same thing like this so I prefer use that atributte*/
+    color: #fff;
+    font-size: 3em;
+    text-transform: capitalize;
+    /*transform: translate(0%,-650%);*/ /*this guy is moviend inside the container, however it move 100% itself, that means if put "x=100%", it will move the same distance like itself*/
+  /*position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-1500%);
+  z-index: 2;*/
+  margin-bottom: 10%;
+
+   
+   
+
+}
+
+.paragraph{
+     /*the porcentage is from the FATHER ELEMENT (in this case from of container) */
+    
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 1.5em;
+    
+
+   /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-2500%);
+    z-index: 2;*/
+    margin-bottom: 10%;
+    width: 100%;
+   
+    
+
+}
+.signUp{
+/*position: relative;
+top:-11em; /*1em is the same like the size for the element*/
+background-color: rgb(165, 51, 13);
+color: #fff;
+border-radius: 5%;
+padding: 2%;
+border: none;
+text-transform: capitalize;
+font-size: 2em;
+margin-top: 5%;
+
+
+
+/*position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-600%);
+
+z-index: 2;*/
+
+
+
+
+
+
+
+
+}
+
+.about{
+    background-color: #f7f7f7;
+    width: 100%;
+    height: auto;
+    margin-top: 0%;
+
+   
+    padding-top: 3em;
+padding-bottom: 1em;
+
+
+
+}
+
+.about p{
+    text-align: justify;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+
+.services{
+background-color: #cdcccc;
+/*height: 20%;*/
+width: 100%;
+padding-top: 5%;  /*con PADDING Top and Bottom, resolve many problems about responsivity CHALLENGE TWO*/
+padding-bottom: 5%;
+
+
+}
+.services h1 {
+    text-transform: capitalize;
+}
+.adjustService ul{
+    display: flex;
+    justify-content: space-around;
+    list-style: none; /*take off the list markers from the list */
+    
+
+}
+.adjustService ul li h2 {
+    text-transform: capitalize;
+}
+
+.adjustService ul li p {
+    text-align: center;
+}
+.contact form{
+    background-color: #f7f7f7;
+    padding: 1em;
+    margin: 0;
+   
+
+
+}
+#contactoF{
+font-size:2em;
+text-transform: capitalize;
+}
+
+form input[type="name"],input[type="email"],textarea,input[type="submit"]{
+margin: 0.5%;
+}
+#name1{
+    font-size: 1em;
+    width: 50%;
+}
+#email1{
+    font-size: 1em;
+    width: 50%;
+}
+#textArea1{
+    font-size: 1em;
+    width: 50%;
+}
+
+form input[type="submit"]{
+    font-size: 1.5em;
+    padding: 0.2em;
+    border-radius: 10%;
+    border: none;
+    background-color: rgb(139, 153, 153);
+}
+
+footer{
+background-color: #827b7b;
+width: 100%;
+height: 3em;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+
+}
+
+
+/*Based in Samsung Galaxy S20 Ultra with //WIDTH : 412px and HEIGHT:912px//*/
+/*first responsive design for devices of less than 412px width*/
+
+@media(max-width:779px ) and (min-width:518px){ /*NO inclusive "779"*/
+    
+    body{
+        width: 100%;
+        
+    }
+
+    .textOver{
+        position: absolute;
+        top: 15%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .welcome{
+        width: 100%;
+        font-size: 2em;
+    }
+    .paragraph{
+        font-size: 1em;
+    }
+    .signUp{
+        font-size: 1em;
+    }
+    }
+
+    @media(max-width:518px ) and (min-width:400px){
+        .textOver{
+           position: absolute;
+           top: 10%;
+           left: 50%;
+           transform: translate(-50%,-50%);
+        }
+        .welcome{
+            width: 100%;
+            font-size: 1.5em;
+        }
+        .paragraph{
+            width: 100%;
+            font-size: .8em;
+        }
+        .signUp{
+            
+            font-size: .5em;
+        }
+    }
+
+    @media(max-width:400px ) /*and (min-width:389px)*/{
+        .textOver{
+           position: absolute;
+           top: 10%;
+           left: 50%;
+           transform: translate(-50%,-50%);
+        }
+        .welcome{
+            width: 100%;
+            font-size: 1em;
+        }
+        .paragraph{
+            width: 100%;
+            font-size: .5em;
+        }
+        .signUp{
+            
+            font-size: .5em;
+        }
+
+        .about{
+            font-size: 0.7em;
+        }
+
+        .services{
+            font-size: 0.7em;
+        }
+
+        .contact{
+            font-size: 0.7em;
+        }
+        footer {
+            font-size: 0.7em;
+        }
+    }
+
+    @media (max-width:600px){
+        body,html{
+            width: 100%;
+        }
+
+        header ul {
+            width: 100%;
+            font-size: 0.8em;
+        }
+
+        
+        
+    }
+
+    
+
+  
+
+/*
+    @media(max-width:614px) and  (min-width:460px){
+        body{
+            width: 100%;
+        }
+        header ul li{
+            font-size: 0.5em;
+        }
+        .welcome{
+            font-size: 2em;
+            top: 20%;
+            width: 100%;
+        }
+        .paragraph{
+            top: 5%;
+            width: 100%;
+            font-size: 1.5em;
+            
+            
+        }
+        .signUp{
+            top: 25%;
+            font-size: medium;
+
+        }
+
+
+    }
+*/
+    /*
+    @media(max-width:459px)   {
+        body{
+            width: 100%;
+        }
+        header ul li{
+            font-size: 0.5em; fixed, good for all the next smaller designs
+        }
+        .welcome{
+            font-size: 1.5em;
+            top: 13%;
+            width: 100%;
+        }
+        .paragraph{
+            top: 11%;
+            width: 100%;
+            font-size: 1em;
+            
+            
+        }
+        .signUp{
+            top: 15%;
+            font-size: .5em;
+
+        }
+
+
+    }
+
+    */
+
+  
